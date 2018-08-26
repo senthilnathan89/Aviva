@@ -1,0 +1,55 @@
+Error 1:
+The brackets "()" at the last line is not needed. Because we are not defining the function as an independent one. We are trying to use this function as a parameter.
+
+Error 2:
+At line no: 44 and 63
+	domaths and doMaths --> spelling mistake. The name has to be in same letter case in Javascript
+
+Error 3:
+Inside maths.addInteger --> Line no: 11
+	result is not defined  --> We have used "use strict" - so all the variables has to be declared before use.
+
+Error 4:
+Line no: 53
+ console.log("Multiplication result = ' + sum2.output);  --> Quotes mismatch
+ 
+Error 5: 
+ Line 35 and 36:
+ 
+		return 
+        {input : sequence, output : result};
+		
+	Both should be in same line. Because JS treats 'return' with a 'retutn;', since ; is automatically added in JS parsing
+		
+	
+Error 6:
+Line no: 21	
+	if (sequence.length = 0) {
+		Usage of '=' instead of '==' in If condition
+
+Error 7:
+Line 25 and 29
+                var result = result * maths.getInteger(sequence[i]);
+				Second, result, inside the loop need not be defined again as it will clear the previous value and cause ambiguity.
+
+
+Additional suggestions
+
+suggestion 1:
+
+    maths.getInteger = function (x) {
+        var result = parseInt(x);
+        if (result) {
+            return result;
+        }
+        else {
+            return 0;
+        }
+    };
+
+This can return 0 if any string is passed as input value, rather than giving a Undefined as output.
+	
+Suggestion 2:
+	
+	In maths.multiplyInteger
+Also, for loop of Multiply --> if any number is 0 just return 0 and break the for loop instead of looping through entire data. if data is huge it can save some instructions.
